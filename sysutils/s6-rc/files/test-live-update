@@ -1,0 +1,158 @@
+# Invoke with execlineb -WS5: RC_BINDIR UPDATE_BINARY DEP_BINDIR ROUNDS COMPILER.
+# Isolated integration test. No system or user startup integration.
+emptyenv -P
+export LC_ALL C
+umask 077
+export PATH ${1}:${3}:/usr/bin:/bin:/usr/sbin:/sbin
+export TEST_BIN ${1}
+export TEST_UPDATE ${2}
+export TEST_COMPILE ${5}
+if { /bin/test ${4} -ge 1 }
+if { /bin/test ${4} -le 100 }
+if { /bin/test -x ${2} }
+if { /bin/test -x ${5} }
+# Darwin's Unix-socket path limit is shorter than a typical MacPorts workpath.
+# Use a private, short temporary directory; print its path for failure analysis.
+backtick -E fixture { /usr/bin/mktemp -d /tmp/s6rc.XXXXXX }
+export TEST_ROOT ${fixture}
+if { /usr/bin/printf "Fixture: %s\n" ${fixture} }
+if { /bin/mkdir ${fixture}/scan ${fixture}/source }
+
+# This helper is fixture-local, not an installed command or second service model.
+if {
+  redirfd -w 1 ${fixture}/update
+  /usr/bin/printf "%s\n" "#!/usr/bin/env execlineb
+emptyenv -P
+importas -i root TEST_ROOT
+importas -i bin TEST_BIN
+importas -i updater TEST_UPDATE
+importas -i compiler TEST_COMPILE
+importas -i label UPDATE_LABEL
+if { gtimeout -k 2s 12s ${compiler} ${root}/compiled-${label} ${root}/source }
+if { ${bin}/s6-rc-db -c ${root}/compiled-${label} check }
+if {
+  ifelse { /bin/test -f ${root}/conversion-${label} } {
+    gtimeout -k 2s 12s ${updater} -l ${root}/live -f ${root}/conversion-${label} ${root}/compiled-${label}
+  }
+  gtimeout -k 2s 12s ${updater} -l ${root}/live ${root}/compiled-${label}
+}
+backtick -E actual { greadlink -f ${root}/live/compiled }
+backtick -E expected { greadlink -f ${root}/compiled-${label} }
+if { /bin/test ${actual} = ${expected} }
+gtimeout -k 2s 12s ${bin}/s6-rc -l ${root}/live diff"
+}
+if { /bin/chmod 700 ${fixture}/update }
+if {
+  forx -E -o 0 name { awake rename-me retired idle-0 idle-1 idle-2 idle-3 idle-4 idle-5 idle-6 idle-7 idle-8 idle-9 idle-10 idle-11 }
+  if { /bin/mkdir ${fixture}/source/${name} }
+  if { redirfd -w 1 ${fixture}/source/${name}/type /usr/bin/printf "longrun\n" }
+  if { redirfd -w 1 ${fixture}/source/${name}/notification-fd /usr/bin/printf "3\n" }
+  if { redirfd -w 1 ${fixture}/source/${name}/timeout-up /usr/bin/printf "4000\n" }
+  if { redirfd -w 1 ${fixture}/source/${name}/timeout-kill /usr/bin/printf "1000\n" }
+  if {
+    redirfd -w 1 ${fixture}/source/${name}/run
+    /usr/bin/printf "%s\n" "#!/usr/bin/env execlineb
+if { fdmove -c 1 3 /usr/bin/printf \"\\n\" }
+fdclose 3
+/bin/sleep 600"
+  }
+  /bin/chmod 700 ${fixture}/source/${name}/run
+}
+if { ${5} ${fixture}/compiled-0 ${fixture}/source }
+fdreserve 2
+importas -iu read_fd FD0
+importas -iu write_fd FD1
+piperw ${read_fd} ${write_fd}
+background {
+  fdclose ${read_fd}
+  redirfd -r 0 /dev/null
+  redirfd -w 1 ${fixture}/supervision.log
+  fdmove -c 2 1
+  s6-svscan -d ${write_fd} ${fixture}/scan
+}
+importas -iu scanner !
+fdclose ${write_fd}
+foreground {
+  if { fdmove 0 ${read_fd} gtimeout -k 2s 5s /usr/bin/grep -qx "" }
+  fdclose ${read_fd}
+  if { s6-rc-init -c ${fixture}/compiled-0 -l ${fixture}/live -t 4000 ${fixture}/scan }
+  if { gtimeout -k 2s 12s s6-rc -l ${fixture}/live -u change awake rename-me retired }
+  backtick -E awake_pid { s6-svstat -o pid ${fixture}/scan/awake }
+  backtick -E rename_pid { s6-svstat -o pid ${fixture}/scan/rename-me }
+  backtick -E retired_pid { s6-svstat -o pid ${fixture}/scan/retired }
+  if { /bin/test ${awake_pid} -gt 0 }
+  if { /bin/test ${rename_pid} -gt 0 }
+  if { /bin/test ${retired_pid} -gt 0 }
+  # Let the scanner's documented restart throttle expire before testing updates.
+  if { /bin/sleep 1.1 }
+  if {
+    forbacktickx -E -o 0 round { gseq 1 ${4} }
+    if { export UPDATE_LABEL ${round} ${fixture}/update }
+    if { backtick -E pid { s6-svstat -o pid ${fixture}/scan/awake } /bin/test ${pid} = ${awake_pid} }
+    if { backtick -E pid { s6-svstat -o pid ${fixture}/scan/rename-me } /bin/test ${pid} = ${rename_pid} }
+    if { backtick -E pid { s6-svstat -o pid ${fixture}/scan/retired } /bin/test ${pid} = ${retired_pid} }
+    forbacktickx -E -o 0 idle { gseq 0 11 }
+    backtick -E state { s6-svstat -o up,wantedup ${fixture}/scan/idle-${idle} }
+    /bin/test ${state} = "false false"
+  }
+  if { /usr/bin/printf "PASS repeated updates preserve running and inactive services\n" }
+  if { /bin/mv ${fixture}/source/rename-me ${fixture}/source/renamed }
+  if { redirfd -w 1 ${fixture}/conversion-rename /usr/bin/printf "rename-me -> renamed\n" }
+  if { export UPDATE_LABEL rename ${fixture}/update }
+  if { backtick -E pid { s6-svstat -o pid ${fixture}/scan/renamed } /bin/test ${pid} = ${rename_pid} }
+  if -n { /bin/test -L ${fixture}/scan/rename-me }
+  if { redirfd -w 1 ${fixture}/conversion-restart /usr/bin/printf "renamed restart\n" }
+  if { export UPDATE_LABEL restart ${fixture}/update }
+  if {
+    backtick -E pid { s6-svstat -o pid ${fixture}/scan/renamed }
+    if { /bin/test ${pid} -gt 0 }
+    /bin/test ${pid} != ${rename_pid}
+  }
+  if { backtick -E pid { s6-svstat -o pid ${fixture}/scan/awake } /bin/test ${pid} = ${awake_pid} }
+  if { /usr/bin/printf "PASS rename preserves PID; restart affects only its target\n" }
+  if { /bin/mv ${fixture}/source/retired ${fixture}/retired-source }
+  if { /bin/mv ${fixture}/source/idle-11 ${fixture}/removed-idle-source }
+  if { export UPDATE_LABEL remove ${fixture}/update }
+  if -n { /bin/test -L ${fixture}/scan/retired }
+  if -n { /bin/test -L ${fixture}/scan/idle-11 }
+  if -n { redirfd -w 2 /dev/null /bin/kill -0 ${retired_pid} }
+  if { /bin/mv ${fixture}/source/awake ${fixture}/awake-longrun-source }
+  if { /bin/mkdir ${fixture}/source/awake }
+  if { redirfd -w 1 ${fixture}/source/awake/type /usr/bin/printf "oneshot\n" }
+  if { redirfd -w 1 ${fixture}/source/awake/up /usr/bin/printf "/usr/bin/true\n" }
+  if { redirfd -w 1 ${fixture}/source/awake/down /usr/bin/printf "/usr/bin/true\n" }
+  if { export UPDATE_LABEL oneshot ${fixture}/update }
+  if { pipeline { s6-rc -l ${fixture}/live -a list } /usr/bin/grep -Fxq awake }
+  if -n { /bin/test -L ${fixture}/scan/awake }
+  if { /bin/mv ${fixture}/source/awake ${fixture}/awake-oneshot-source }
+  if { /bin/mv ${fixture}/awake-longrun-source ${fixture}/source/awake }
+  if { export UPDATE_LABEL longrun ${fixture}/update }
+  if {
+    backtick -E pid { s6-svstat -o pid ${fixture}/scan/awake }
+    if { /bin/test ${pid} -gt 0 }
+    /bin/test ${pid} != ${awake_pid}
+  }
+  if { /bin/cp -R ${fixture}/retired-source ${fixture}/source/added }
+  if { export UPDATE_LABEL added ${fixture}/update }
+  if { backtick -E state { s6-svstat -o up,wantedup ${fixture}/scan/added } /bin/test ${state} = "false false" }
+  if { gtimeout -k 2s 12s s6-rc -l ${fixture}/live -u change added }
+  if { backtick -E state { s6-svstat -o up,ready ${fixture}/scan/added } /bin/test ${state} = "true true" }
+  if { /usr/bin/printf "PASS removals, service-type changes and explicit additions\n" }
+  if { gtimeout -k 2s 12s s6-rc -l ${fixture}/live -Da change }
+  backtick -E active { s6-rc -l ${fixture}/live -a list }
+  /bin/test -z ${active}
+}
+importas -iu result ?
+fdclose ${read_fd}
+# Always stop our scanner after success or an assertion failure; preserve evidence.
+foreground { redirfd -w 2 /dev/null gtimeout -k 2s 12s s6-rc -l ${fixture}/live -Da change }
+if { s6-svscanctl -t ${fixture}/scan }
+wait -i -o -t 6000 { ${scanner} }
+importas -iu scanner_result ?
+if { /bin/test ${scanner_result} = 0 }
+if { /bin/test ${result} = 0 }
+ifelse { /bin/test -s ${fixture}/supervision.log } {
+  foreground { /bin/cat ${fixture}/supervision.log }
+  exit 1
+}
+/usr/bin/printf "ALL LIVE-UPDATE TESTS PASSED; fixture retained: %s\n" ${fixture}

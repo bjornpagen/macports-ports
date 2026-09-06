@@ -1,0 +1,50 @@
+Retire obsolete supervisors after s6-svscan has rescanned the replacement
+service directories, using the update's existing final "an" command.
+
+Sending "xd" before the rescan allows s6-svscan to reap an old supervisor
+while it is still marked active and respawn it through an unlinked scan entry.
+This produces spurious "unable to chdir" failures during live updates.
+Keep the old idle supervisors alive until the scanner identifies them as
+inactive. No sleeps, retries, signal masking, or warning suppression are added.
+The ordering is in s6-rc/s6 itself, rather than a versioned Darwin API. The
+Portfile limits this downstream correction to Darwin; no OS-release-specific
+boundary is claimed.
+
+MacPorts downstream patch; not submitted to or accepted by Skarnet.
+Integration regression: test-live-update.
+
+--- src/s6-rc/s6-rc-update.c.orig
++++ src/s6-rc/s6-rc-update.c
+@@ -308,7 +308,7 @@
+   }
+ }
+ 
+-static inline void make_new_livedir (unsigned char const *oldstate, s6rc_db_t const *olddb, unsigned char const *newstate, s6rc_db_t const *newdb, char const *newcompiled, unsigned int *invimage, char const *prefix, stralloc *sa)
++static inline void make_new_livedir (s6rc_db_t const *olddb, unsigned char const *newstate, s6rc_db_t const *newdb, char const *newcompiled, unsigned int *invimage, char const *prefix, stralloc *sa)
+ {
+   size_t dirlen, pos, newlen, sdlen ;
+   size_t newclen = strlen(newcompiled) ;
+@@ -377,10 +377,12 @@
+   if (!atomic_symlink4(sa->s + dirlen, live, 0, 0)) goto rollback ;
+   if (verbosity >= 2) strerr_warni1x("successfully switched to new database") ;
+ 
+- /* scandir cleanup, then old livedir cleanup */
++ /* Unlink only: exiting supervisors here would let s6-svscan restart them
++    before it rescans. The final "an" command stops inactive supervisors
++    after the new servicedirs have been linked and scanned. */
+   i = olddb->nlong ;
+   while (i--)
+-    s6rc_servicedir_unsupervise(sa->s, prefix, olddb->string + olddb->services[i].name, (oldstate[i] & 33) == 1) ;
++    s6rc_servicedir_unsupervise(sa->s, prefix, olddb->string + olddb->services[i].name, 1) ;
+   rm_rf_in_tmp(sa, 0) ;
+   sa->len = 0 ;
+   return ;
+@@ -786,7 +788,7 @@
+         if (verbosity >= 2)
+           strerr_warni1x("updating state and service directories") ;
+ 
+-        make_new_livedir(oldstate, &olddb, newstate, &newdb, argv[0], invimage, prefix, &sa) ;
++        make_new_livedir(&olddb, newstate, &newdb, argv[0], invimage, prefix, &sa) ;
+         stralloc_free(&sa) ;
+         if (s6rc_servicedir_manage_g(live, prefix, &deadline) < 0)
+         {

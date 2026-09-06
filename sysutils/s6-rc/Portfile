@@ -1,0 +1,93 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           legacysupport 1.1
+
+# clock_gettime, through the statically linked Skarnet libraries.
+legacysupport.newest_darwin_requires_legacy 15
+
+name                s6-rc
+version             0.7.0.0
+revision            0
+categories          sysutils
+license             ISC
+maintainers         nomaintainer
+description         dependency-based service manager for s6
+
+long_description    s6-rc compiles service definitions and starts or stops \
+                    supervised daemons and one-shot tasks in dependency \
+                    order. It also supports live service database updates.
+
+homepage            https://skarnet.org/software/s6-rc/
+master_sites        ${homepage}
+
+checksums           rmd160  89aeab44e94a1068ca6f89b36adda06e492d7cbb \
+                    sha256  bf5b8ce0da5a4ee70d642b818b61d9916a7a9b64a457595f388113e54a188688 \
+                    size    157152
+
+depends_build-append \
+                    port:execline \
+                    port:pkgconfig \
+                    port:s6 \
+                    port:skalibs
+
+depends_run         port:execline port:s6
+
+depends_test        port:coreutils
+
+platform darwin {
+    # This fixes an updater/scanner ordering race, not a versioned OS API.
+    # There is no known Darwin release boundary for the affected sequence.
+    patchfiles-append patch-update-supervisor-retirement.diff
+    test.run        yes
+}
+
+# Match the normalized target recorded by skalibs.
+# https://trac.macports.org/ticket/74350
+configure.args-append \
+                    --enable-pkgconfig \
+                    --with-pkgconfig \
+                    --build=${build_arch}-apple-darwin${os.major} \
+                    --target=${build_arch}-apple-darwin${os.major} \
+                    --livedir=${prefix}/var/run/s6-rc \
+                    --repodir=${prefix}/var/lib/s6-rc/repository
+
+test {
+    # Generated service files use absolute libexec paths. Build a test-only
+    # compiler with relocated helper paths, leaving the installed compiler
+    # and the database/update code under test unchanged.
+    xinstall -d ${workpath}/test-include/s6-rc
+    xinstall -m 0644 ${worksrcpath}/src/include/s6-rc/config.h \
+        ${workpath}/test-include/s6-rc/config.h
+    reinplace "s|^#define S6RC_EXTLIBEXECPREFIX .*|#define S6RC_EXTLIBEXECPREFIX \"${worksrcpath}/\"|" \
+        ${workpath}/test-include/s6-rc/config.h
+    set test_libs [exec ${prefix}/bin/pkg-config --libs --static libs6 libexecline]
+    system -W ${worksrcpath} "${configure.cc} -I[shellescape ${workpath}/test-include] \
+        -Isrc/include ${configure.cppflags} ${configure.cflags} ${configure.cc_archflags} \
+        -std=c99 src/s6-rc/s6-rc-compile.c libs6rc.a.xyzzy ${test_libs} \
+        ${configure.ldflags} ${configure.ld_archflags} \
+        -o [shellescape ${workpath}/test-s6-rc-compile]"
+    system -W ${workpath} "[shellescape ${prefix}/bin/execlineb] -WS5 \
+        [shellescape ${filespath}/test-live-update] \
+        [shellescape ${worksrcpath}] [shellescape ${worksrcpath}/s6-rc-update] \
+        [shellescape ${prefix}/bin] 30 [shellescape ${workpath}/test-s6-rc-compile]"
+}
+
+# Install tools and documentation, not a database or service instance.
+post-destroot {
+    set docdir ${prefix}/share/doc/${name}
+    xinstall -d ${destroot}${docdir}
+    xinstall -m 0644 -W ${worksrcpath} \
+        AUTHORS \
+        COPYING \
+        INSTALL \
+        NEWS \
+        README \
+        ${destroot}${docdir}
+    xinstall -m 0644 {*}[glob ${worksrcpath}/doc/*.html] \
+        ${destroot}${docdir}
+}
+
+livecheck.type      regex
+livecheck.url       ${homepage}
+livecheck.regex     "${name}-(\[0-9.\]+)\\.tar\\.gz"
