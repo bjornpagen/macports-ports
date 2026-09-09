@@ -1,0 +1,41 @@
+CASE switch fixture=/tmp/rcfault.ilDSiG
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: fatal: unable to make new live directory in /private/tmp/rcfault.ilDSiG/live:s6-rc-init:hgMwMY: Permission denied
+PASS switch: retirement, retained PID, recovery; fixture retained
+CASE manage fixture=/tmp/rcfault.8KtZvB
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: fatal: unable to manage new service directories in /tmp/rcfault.8KtZvB/live: Permission denied
+PASS manage: retirement, retained PID, recovery; fixture retained
+CASE spawn fixture=/tmp/rcfault.RbWM0R
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: info: cleaning up scan directory
+s6-rc-update: info: updating s6rc-fdholder pipe storage
+s6-rc-update: warning: unable to live update s6rc-fdholder - restarting it
+s6-rc-update: fatal: unable to spawn s6-svc: Resource temporarily unavailable
+PASS spawn: retirement, retained PID, recovery; fixture retained
+CASE timeout fixture=/tmp/rcfault.6kXJlI
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: info: cleaning up scan directory
+s6-rc-update: info: updating s6rc-fdholder pipe storage
+s6-rc-update: warning: unable to live update s6rc-fdholder - restarting it
+s6-rc-update: fatal: timed out during s6rc-fdholder update
+PASS timeout: retirement, retained PID, recovery; fixture retained
+CASE cancel fixture=/tmp/rcfault.pVJ1le
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: info: cleaning up scan directory
+s6-rc-update: info: updating s6rc-fdholder pipe storage
+PASS cancel: retirement, retained PID, recovery; fixture retained

@@ -1,0 +1,3 @@
+PASS cspawn chdir
+PASS cspawn fchdir
+exit=0

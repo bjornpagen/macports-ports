@@ -1,0 +1,2 @@
+PASS cspawn chdir
+PASS cspawn fchdir

@@ -1,0 +1,12 @@
+PASS -w descriptor=default acquisition=blocking: exclusion, timeout, release
+PASS -r descriptor=default acquisition=blocking: exclusion, timeout, release
+PASS -w descriptor=default acquisition=timed: exclusion, timeout, release
+PASS -r descriptor=default acquisition=timed: exclusion, timeout, release
+PASS -w descriptor=3 acquisition=blocking: exclusion, timeout, release
+PASS -r descriptor=3 acquisition=blocking: exclusion, timeout, release
+PASS -w descriptor=3 acquisition=timed: exclusion, timeout, release
+PASS -r descriptor=3 acquisition=timed: exclusion, timeout, release
+PASS -w descriptor=9 acquisition=blocking: exclusion, timeout, release
+PASS -r descriptor=9 acquisition=blocking: exclusion, timeout, release
+PASS -w descriptor=9 acquisition=timed: exclusion, timeout, release
+PASS -r descriptor=9 acquisition=timed: exclusion, timeout, release

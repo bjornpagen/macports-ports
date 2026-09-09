@@ -1,0 +1,44 @@
+CASE switch fixture=/tmp/rcfault.7QRG0d
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: fatal: unable to make new live directory in /private/tmp/rcfault.7QRG0d/live:s6-rc-init:51Bt3f: Permission denied
+s6-rc-update: fatal: unable to take lock on /tmp/rcfault.7QRG0d/live and /tmp/rcfault.7QRG0d/live/compiled: No such file or directory
+FAIL line 158: run((char const *[]){updater, "-t", "4000", "-l", live, db3, 0}) == 0
+nonempty supervision.log
+FAIL switch: retirement, retained PID, recovery; fixture retained
+CASE manage fixture=/tmp/rcfault.WcpbVw
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: fatal: unable to manage new service directories in /tmp/rcfault.WcpbVw/live: Permission denied
+PASS manage: retirement, retained PID, recovery; fixture retained
+CASE spawn fixture=/tmp/rcfault.k8lM9j
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: info: updating s6rc-fdholder pipe storage
+s6-rc-update: warning: unable to live update s6rc-fdholder - restarting it
+s6-rc-update: fatal: unable to spawn s6-svc: Resource temporarily unavailable
+FAIL line 154: gone(oldidle)
+FAIL spawn: retirement, retained PID, recovery; fixture retained
+CASE timeout fixture=/tmp/rcfault.7cP6cl
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: info: updating s6rc-fdholder pipe storage
+s6-rc-update: warning: unable to live update s6rc-fdholder - restarting it
+s6-rc-update: fatal: timed out during s6rc-fdholder update
+FAIL line 154: gone(oldidle)
+FAIL timeout: retirement, retained PID, recovery; fixture retained
+CASE cancel fixture=/tmp/rcfault.YBF56A
+s6-rc-update: info: computing state adjustments
+s6-rc-update: info: stopping services in the old database
+s6-rc-update: info: updating state and service directories
+s6-rc-update: info: successfully switched to new database
+s6-rc-update: info: updating s6rc-fdholder pipe storage
+FAIL line 154: gone(oldidle)
+FAIL cancel: retirement, retained PID, recovery; fixture retained

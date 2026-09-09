@@ -1,0 +1,18 @@
+Fixture: /tmp/s6rc.pMA3P8
+PASS repeated updates preserve running and inactive services
+PASS rename preserves PID; restart affects only its target
+PASS removals, service-type changes and explicit additions
+s6-supervise: fatal: unable to chdir to idle-9: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-7: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-6: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-8: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-4: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-5: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-10: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-11: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-0: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-1: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-3: No such file or directory
+s6-supervise: fatal: unable to chdir to idle-2: No such file or directory
+s6-supervise: fatal: unable to chdir to s6rc-oneshot-runner: No such file or directory
+s6-supervise: fatal: unable to chdir to s6rc-fdholder: No such file or directory

@@ -1,0 +1,5 @@
+Fixture: /tmp/s6rc.XN4G8Z
+PASS repeated updates preserve running and inactive services
+PASS rename preserves PID; restart affects only its target
+PASS removals, service-type changes and explicit additions
+ALL LIVE-UPDATE TESTS PASSED; fixture retained: /tmp/s6rc.XN4G8Z
