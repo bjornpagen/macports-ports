@@ -1,0 +1,45 @@
+# /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix, notls, native; host 27.0.1 arm64
+ok inventory: 31 programs present
+ok inventory -openssl: no TLS program installed
+ok s6-dnsip4: exit 0, '192.0.2.1'
+ok s6-dnsip6: exit 0, '2001:db8::1'
+ok s6-dnsip: exit 0, '2001:db8::1\n192.0.2.1'
+ok s6-dnsip -h: exit 0, '127.0.0.1'
+ok s6-dnsip NXDOMAIN: exit 2, ''
+ok s6-dnsmx: exit 0, '10 mx.s6test.example.'
+ok s6-dnsns: exit 0, 'ns1.s6test.example.'
+ok s6-dnssoa: exit 0, 'ns1.s6test.example. hostmaster.s6test.example. 2026102601 3600 600 86400 300'
+ok s6-dnssrv: exit 0, '10 5 80 a.s6test.example.'
+ok s6-dnstxt: exit 0, '"hello from s6test"'
+ok s6-dnstxt over TCP: exit 0, '"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+ok s6-dnsname v4: exit 0, 'a.s6test.example.'
+ok s6-dnsname v6: exit 0, 'a.s6test.example.'
+ok s6-dnsq: exit 0, '66 bytes, 1+1+0+0 records, response, authoritative, weird ra, noerror\nquery: 1 a.s6test.ex'
+ok s6-dnsqr: exit 0, '78 bytes, 1+1+0+0 records, response, authoritative, rd, ra, noerror\nquery: 28 a.s6test.exa'
+ok s6-dnsqualify: exit 0, 'a.s6test.example.\na.'
+ok s6-dnsip4-filter (skadnsd): exit 0, 'a.s6test.example=192.0.2.1 rest'
+ok s6-dnsip6-filter (skadnsd): exit 0, 'a.s6test.example=2001:db8::1 rest'
+ok s6-dnsname-filter (skadnsd): exit 0, '192.0.2.1=a.s6test.example. rest'
+ok s6-randomip: exit 0, '209.118.111.232\n6.134.73.91\n37.30.197.172'
+ok s6-randomip count: 3 addresses
+ok s6-dns-hosts-compile: exit 0, ''
+ok s6-dns-hosts-compile output: 2306-byte cdb
+ok skadnsd standalone: exit 111 on immediate EOF
+ok s6-getservbyname: exit 0, '80'
+ok s6-tcpserver + s6-tcpclient: exit 0, 'TCP 127.0.0.1 60842'
+ok s6-tcpserver-socketbinder + s6-tcpserverd: exit 0, 'TCP 127.0.0.1 60844'
+ok s6-tcpserver -c 2: third client served after 2.1 s, once a slot freed
+ok s6-tcpserver -C 1: first client served; second from 127.0.0.1 closed after 0.0 s, prog not run
+ok s6-tcpserver SIGTERM: server exited, child kept running
+ok s6-tcpserver SIGHUP: server kept running, child gone
+ok s6-tcpserver SIGQUIT: server exited, child gone
+ok s6-tcpserver SIGABRT: server exited, child gone
+ok s6-tcpserver-access allow: prog ran
+ok s6-tcpserver-access deny: connection closed, prog not run
+ok proxy-server v1: exit 0, '198.51.100.7 40000 192.0.2.10 hello'
+ok s6-ident-client: exit 0, 's6test'
+ok s6-taiclockd + s6-taiclock: exit 0, 12-byte TAIN adjustment
+ok s6-clockview: exit 0, 'before: 2026-10-26 15:48:44.717408500\nafter:  2026-10-26 15:48:44.717408500'
+ok s6-clockadd (unprivileged): exit 111, 's6-clockadd: fatal: unable to sysclock_set: Operation not permitted'
+ok s6-sntpclock: exit 0, view 'before: 2026-10-26 15:48:44.777761500\nafter:  2026-10-26 15:48:44.777762927'
+# 0 failure(s)

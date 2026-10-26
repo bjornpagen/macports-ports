@@ -1,0 +1,625 @@
+--->  Fetching distfiles for s6-networking
+--->  Verifying checksums for s6-networking
+--->  Checksumming s6-networking-2.8.0.1.tar.gz
+--->  Extracting s6-networking
+--->  Extracting s6-networking-2.8.0.1.tar.gz
+Executing:  cd "/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work" && /usr/bin/gzip -dc '/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/distfiles/s6-networking/s6-networking-2.8.0.1.tar.gz' | /usr/bin/tar -xf - 
+--->  Configuring s6-networking
+Executing:  cd "/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1" && ./configure --prefix=/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix --enable-pkgconfig --with-pkgconfig --build=arm64-apple-darwin27 --target=arm64-apple-darwin27 --enable-ssl=libtls --with-ssl-path=/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix 
+Checking for C compiler...
+./configure: warning: compiler /usr/bin/clang is declared with its own path. If it's not accessible via PATH, you will need to pass AR, RANLIB and STRIP make variables to the make invocation.
+  ... /usr/bin/clang
+Checking whether C compiler works... 
+  ... yes
+Checking target system type...
+  ... arm64-apple-darwin27
+Shared libraries will be named ...
+  ... *.dylib
+Checking whether compiler accepts -fPIC ...
+  ... yes
+Checking whether compiler accepts -std=c99 ...
+  ... yes
+Checking whether compiler accepts -fomit-frame-pointer ...
+  ... yes
+Checking whether compiler accepts -fno-exceptions ...
+  ... yes
+Checking whether compiler accepts -fno-unwind-tables ...
+  ... yes
+Checking whether compiler accepts -fno-asynchronous-unwind-tables ...
+  ... yes
+Checking whether compiler accepts -Werror=implicit-function-declaration ...
+  ... yes
+Checking whether compiler accepts -Werror=implicit-int ...
+  ... yes
+Checking whether compiler accepts -Werror=pointer-sign ...
+  ... yes
+Checking whether compiler accepts -Werror=pointer-arith ...
+  ... yes
+Checking whether compiler accepts -ffunction-sections ...
+  ... yes
+Checking whether compiler accepts -fdata-sections ...
+  ... yes
+Checking whether linker accepts -Wl,--sort-section=alignment ...
+  ... no
+Checking whether linker accepts -Wl,--sort-common ...
+  ... no
+Checking whether linker accepts -Wl,--gc-sections ...
+  ... no
+Creating config.mak...
+  ... done.
+Creating src/include/s6-networking/config.h...
+  ... done.
+--->  Building s6-networking
+Executing:  cd "/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1" && /usr/bin/make -j2 -w all 
+make: Entering directory `/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1'
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/libs6net/s6net_ident_client.lo src/libs6net/s6net_ident_client.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/libs6net/s6net_ident_reply_get.lo src/libs6net/s6net_ident_reply_get.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/libs6net/s6net_ident_reply_parse.lo src/libs6net/s6net_ident_reply_parse.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/libs6net/s6net_ident_error.lo src/libs6net/s6net_ident_error.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/stls/stls_drop.lo src/stls/stls_drop.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/stls/stls_handshake.lo src/stls/stls_handshake.c
+src/stls/stls_handshake.c:23:84: warning: initializer overrides prior initialization of this subobject [-Winitializer-overrides]
+   23 |   struct sigaction sanew = { .sa_handler = &alrm_handler, .sa_flags = SA_RESTART, .sa_sigaction = 0 } ;
+      |                                                                                    ^~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk/usr/include/sys/signal.h:297:38: note: expanded from macro 'sa_sigaction'
+  297 | #define sa_sigaction    __sigaction_u.__sa_sigaction
+      |                                      ^
+src/stls/stls_handshake.c:23:44: note: previous initialization is here
+   23 |   struct sigaction sanew = { .sa_handler = &alrm_handler, .sa_flags = SA_RESTART, .sa_sigaction = 0 } ;
+      |                                            ^~~~~~~~~~~~~
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/stls/stls_run.lo src/stls/stls_run.c
+1 warning generated.
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/stls/stls_client_init_and_handshake.lo src/stls/stls_client_init_and_handshake.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/stls/stls_server_init_and_handshake.lo src/stls/stls_server_init_and_handshake.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/stls/stls_send_environment.lo src/stls/stls_send_environment.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/tls/s6tls_clean_and_exec.lo src/tls/s6tls_clean_and_exec.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/tls/s6tls_io_spawn.lo src/tls/s6tls_io_spawn.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/tls/s6tls_prep_tlscio.lo src/tls/s6tls_prep_tlscio.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/tls/s6tls_prep_tlsdio.lo src/tls/s6tls_prep_tlsdio.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/tls/s6tls_sync_and_exec_app.lo src/tls/s6tls_sync_and_exec_app.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -c -o src/tls/s6tls_ucspi_exec_app.lo src/tls/s6tls_ucspi_exec_app.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/proxy-server.o src/conn-tools/proxy-server.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/s6-getservbyname.o src/conn-tools/s6-getservbyname.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/s6-ident-client.o src/conn-tools/s6-ident-client.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/s6-tcpclient.o src/conn-tools/s6-tcpclient.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/s6-tcpserver.o src/conn-tools/s6-tcpserver.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/s6-tcpserver-socketbinder.o src/conn-tools/s6-tcpserver-socketbinder.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/s6-tcpserverd.o src/conn-tools/s6-tcpserverd.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/conn-tools/s6-tcpserver-access.o src/conn-tools/s6-tcpserver-access.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/clock/s6-clockadd.o src/clock/s6-clockadd.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/clock/s6-clockview.o src/clock/s6-clockview.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/clock/s6-sntpclock.o src/clock/s6-sntpclock.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/clock/s6-taiclock.o src/clock/s6-taiclock.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/clock/s6-taiclockd.o src/clock/s6-taiclockd.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-tlsclient.o src/tls/s6-tlsclient.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-tlsc.o src/tls/s6-tlsc.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-tlsc-io.o src/tls/s6-tlsc-io.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-tlsserver.o src/tls/s6-tlsserver.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-tlsd.o src/tls/s6-tlsd.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-tlsd-io.o src/tls/s6-tlsd-io.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-ucspitlsc.o src/tls/s6-ucspitlsc.c
+exec /usr/bin/clang -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -iquote src/include-local -Isrc/include -fPIC -Werror=implicit-function-declaration -Werror=implicit-int -Werror=pointer-sign -Werror=pointer-arith -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -c -o src/tls/s6-ucspitlsd.o src/tls/s6-ucspitlsd.c
+exec env prefix="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix" library="s6net" includedir="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include" dynlibdir="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib" libdir="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib" extra_includedirs="-I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include" extra_libdirs="-L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib" extra_libs="-lskarnet" description="A client library implementing various networking protocols" url="" ldlibs="" ./tools/gen-dotpc.sh > libs6net.pc.tmp
+exec env prefix="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix" library="stls" includedir="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include" dynlibdir="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib" libdir="/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib" extra_includedirs="-I/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include" extra_libdirs="-L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib" extra_libs="-lskarnet -ltls -lssl -lcrypto -lpthread" description="A TLS tunnel library, using libtls as backend" url="" ldlibs="" ./tools/gen-dotpc.sh > libstls.pc.tmp
+exec mv -f libs6net.pc.tmp libs6net.pc
+exec mv -f libstls.pc.tmp libstls.pc
+exec ar rc libs6net.a.xyzzy src/libs6net/s6net_ident_client.lo src/libs6net/s6net_ident_reply_get.lo src/libs6net/s6net_ident_reply_parse.lo src/libs6net/s6net_ident_error.lo
+exec ar rc libstls.a.xyzzy src/stls/stls_drop.lo src/stls/stls_handshake.lo src/stls/stls_run.lo src/stls/stls_client_init_and_handshake.lo src/stls/stls_server_init_and_handshake.lo src/stls/stls_send_environment.lo
+exec ranlib libstls.a.xyzzy
+exec ranlib libs6net.a.xyzzy
+exec ar rc libs6tls.a.xyzzy src/tls/s6tls_clean_and_exec.lo src/tls/s6tls_io_spawn.lo src/tls/s6tls_prep_tlscio.lo src/tls/s6tls_prep_tlsdio.lo src/tls/s6tls_sync_and_exec_app.lo src/tls/s6tls_ucspi_exec_app.lo
+exec /usr/bin/clang -o proxy-server -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/proxy-server.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec ranlib libs6tls.a.xyzzy
+exec /usr/bin/clang -o s6-getservbyname -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/s6-getservbyname.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-ident-client -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/s6-ident-client.o libs6net.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a   
+exec /usr/bin/clang -o s6-tcpclient -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/s6-tcpclient.o libs6net.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libs6dns.a /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a   
+exec /usr/bin/clang -o s6-tcpserver -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/s6-tcpserver.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-tcpserver-socketbinder -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/s6-tcpserver-socketbinder.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-tcpserverd -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/s6-tcpserverd.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-tcpserver-access -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/conn-tools/s6-tcpserver-access.o libs6net.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libs6dns.a /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libs6.a /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a   
+exec /usr/bin/clang -o s6-clockadd -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/clock/s6-clockadd.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-clockview -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/clock/s6-clockview.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-sntpclock -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/clock/s6-sntpclock.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a   
+exec /usr/bin/clang -o s6-taiclock -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/clock/s6-taiclock.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a   
+exec /usr/bin/clang -o s6-taiclockd -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/clock/s6-taiclockd.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a   
+exec /usr/bin/clang -o s6-tlsclient -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-tlsclient.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-tlsc -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-tlsc.o libs6tls.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-tlsc-io -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-tlsc-io.o libstls.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a -ltls -lssl -lcrypto -lpthread   
+exec /usr/bin/clang -o s6-tlsserver -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-tlsserver.o /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-tlsd -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-tlsd.o libs6tls.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-tlsd-io -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-tlsd-io.o libstls.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a -ltls -lssl -lcrypto -lpthread   
+exec /usr/bin/clang -o s6-ucspitlsc -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-ucspitlsc.o libs6tls.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+exec /usr/bin/clang -o s6-ucspitlsd -pipe -Wall -std=c99 -fno-exceptions -fno-unwind-tables -fno-asynchronous-unwind-tables -ffunction-sections -fdata-sections -O2 -fomit-frame-pointer -pipe -Os -isysroot/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64  -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -Wl,-headerpad_max_install_names -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX27.sdk -arch arm64 -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib -L/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib src/tls/s6-ucspitlsd.o libs6tls.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libskarnet.a  
+make: Leaving directory `/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1'
+--->  Staging s6-networking into destroot
+. changed
+	user expected 0 found 501 not modified: Operation not permitted
+	gid expected 0 found 80 not modified: Operation not permitted
+./usr missing (created)
+./usr: user & group not modified: Operation not permitted
+. missing (directory not created: File exists)
+./Applications missing (created)
+./Applications: user not modified: Operation not permitted
+./Developer missing (created)
+./Developer: user not modified: Operation not permitted
+./Library missing (created)
+./Library: user not modified: Operation not permitted
+. changed
+	user expected 0 found 501 not modified: Operation not permitted
+./bin missing (created)
+./bin: user not modified: Operation not permitted
+./etc missing (created)
+./etc: user not modified: Operation not permitted
+./include missing (created)
+./include: user not modified: Operation not permitted
+./lib missing (created)
+./lib/pkgconfig missing (created)
+./lib/pkgconfig: user not modified: Operation not permitted
+./lib: user not modified: Operation not permitted
+./libexec missing (created)
+./libexec: user not modified: Operation not permitted
+./sbin missing (created)
+./sbin: user not modified: Operation not permitted
+./share missing (created)
+./share/doc missing (created)
+./share/doc: user not modified: Operation not permitted
+./share/info missing (created)
+./share/info: user not modified: Operation not permitted
+./share/man missing (created)
+./share/man/cat1 missing (created)
+./share/man/cat1: user not modified: Operation not permitted
+./share/man/cat2 missing (created)
+./share/man/cat2: user not modified: Operation not permitted
+./share/man/cat3 missing (created)
+./share/man/cat3: user not modified: Operation not permitted
+./share/man/cat4 missing (created)
+./share/man/cat4: user not modified: Operation not permitted
+./share/man/cat5 missing (created)
+./share/man/cat5: user not modified: Operation not permitted
+./share/man/cat6 missing (created)
+./share/man/cat6: user not modified: Operation not permitted
+./share/man/cat7 missing (created)
+./share/man/cat7: user not modified: Operation not permitted
+./share/man/cat8 missing (created)
+./share/man/cat8: user not modified: Operation not permitted
+./share/man/cat9 missing (created)
+./share/man/cat9: user not modified: Operation not permitted
+./share/man/catl missing (created)
+./share/man/catl: user not modified: Operation not permitted
+./share/man/catn missing (created)
+./share/man/catn: user not modified: Operation not permitted
+./share/man/man1 missing (created)
+./share/man/man1: user not modified: Operation not permitted
+./share/man/man2 missing (created)
+./share/man/man2: user not modified: Operation not permitted
+./share/man/man3 missing (created)
+./share/man/man3: user not modified: Operation not permitted
+./share/man/man4 missing (created)
+./share/man/man4: user not modified: Operation not permitted
+./share/man/man5 missing (created)
+./share/man/man5: user not modified: Operation not permitted
+./share/man/man6 missing (created)
+./share/man/man6: user not modified: Operation not permitted
+./share/man/man7 missing (created)
+./share/man/man7: user not modified: Operation not permitted
+./share/man/man8 missing (created)
+./share/man/man8: user not modified: Operation not permitted
+./share/man/man9 missing (created)
+./share/man/man9: user not modified: Operation not permitted
+./share/man/manl missing (created)
+./share/man/manl: user not modified: Operation not permitted
+./share/man/mann missing (created)
+./share/man/mann: user not modified: Operation not permitted
+./share/man: user not modified: Operation not permitted
+./share/nls missing (created)
+./share/nls/C missing (created)
+./share/nls/C: user not modified: Operation not permitted
+./share/nls/af_ZA.ISO8859-1 missing (created)
+./share/nls/af_ZA.ISO8859-1: user not modified: Operation not permitted
+./share/nls/af_ZA.ISO8859-15 missing (created)
+./share/nls/af_ZA.ISO8859-15: user not modified: Operation not permitted
+./share/nls/bg_BG.CP1251 missing (created)
+./share/nls/bg_BG.CP1251: user not modified: Operation not permitted
+./share/nls/cs_CZ.ISO8859-2 missing (created)
+./share/nls/cs_CZ.ISO8859-2: user not modified: Operation not permitted
+./share/nls/da_DK.ISO8859-1 missing (created)
+./share/nls/da_DK.ISO8859-1: user not modified: Operation not permitted
+./share/nls/da_DK.ISO8859-15 missing (created)
+./share/nls/da_DK.ISO8859-15: user not modified: Operation not permitted
+./share/nls/de_AT.ISO8859-1 missing (created)
+./share/nls/de_AT.ISO8859-1: user not modified: Operation not permitted
+./share/nls/de_AT.ISO8859-15 missing (created)
+./share/nls/de_AT.ISO8859-15: user not modified: Operation not permitted
+./share/nls/de_CH.ISO8859-1 missing (created)
+./share/nls/de_CH.ISO8859-1: user not modified: Operation not permitted
+./share/nls/de_CH.ISO8859-15 missing (created)
+./share/nls/de_CH.ISO8859-15: user not modified: Operation not permitted
+./share/nls/de_DE.ISO8859-1 missing (created)
+./share/nls/de_DE.ISO8859-1: user not modified: Operation not permitted
+./share/nls/de_DE.ISO8859-15 missing (created)
+./share/nls/de_DE.ISO8859-15: user not modified: Operation not permitted
+./share/nls/el_GR.ISO8859-7 missing (created)
+./share/nls/el_GR.ISO8859-7: user not modified: Operation not permitted
+./share/nls/en_AU.ISO8859-1 missing (created)
+./share/nls/en_AU.ISO8859-1: user not modified: Operation not permitted
+./share/nls/en_AU.ISO8859-15 missing (created)
+./share/nls/en_AU.ISO8859-15: user not modified: Operation not permitted
+./share/nls/en_AU.US-ASCII missing (created)
+./share/nls/en_AU.US-ASCII: user not modified: Operation not permitted
+./share/nls/en_CA.ISO8859-1 missing (created)
+./share/nls/en_CA.ISO8859-1: user not modified: Operation not permitted
+./share/nls/en_CA.ISO8859-15 missing (created)
+./share/nls/en_CA.ISO8859-15: user not modified: Operation not permitted
+./share/nls/en_CA.US-ASCII missing (created)
+./share/nls/en_CA.US-ASCII: user not modified: Operation not permitted
+./share/nls/en_GB.ISO8859-1 missing (created)
+./share/nls/en_GB.ISO8859-1: user not modified: Operation not permitted
+./share/nls/en_GB.ISO8859-15 missing (created)
+./share/nls/en_GB.ISO8859-15: user not modified: Operation not permitted
+./share/nls/en_GB.US-ASCII missing (created)
+./share/nls/en_GB.US-ASCII: user not modified: Operation not permitted
+./share/nls/en_NZ.ISO8859-1 missing (created)
+./share/nls/en_NZ.ISO8859-1: user not modified: Operation not permitted
+./share/nls/en_NZ.ISO8859-15 missing (created)
+./share/nls/en_NZ.ISO8859-15: user not modified: Operation not permitted
+./share/nls/en_NZ.US-ASCII missing (created)
+./share/nls/en_NZ.US-ASCII: user not modified: Operation not permitted
+./share/nls/en_US.ISO8859-1 missing (created)
+./share/nls/en_US.ISO8859-1: user not modified: Operation not permitted
+./share/nls/en_US.ISO8859-15 missing (created)
+./share/nls/en_US.ISO8859-15: user not modified: Operation not permitted
+./share/nls/es_ES.ISO8859-1 missing (created)
+./share/nls/es_ES.ISO8859-1: user not modified: Operation not permitted
+./share/nls/es_ES.ISO8859-15 missing (created)
+./share/nls/es_ES.ISO8859-15: user not modified: Operation not permitted
+./share/nls/et_EE.ISO8859-15 missing (created)
+./share/nls/et_EE.ISO8859-15: user not modified: Operation not permitted
+./share/nls/fi_FI.ISO8859-1 missing (created)
+./share/nls/fi_FI.ISO8859-1: user not modified: Operation not permitted
+./share/nls/fi_FI.ISO8859-15 missing (created)
+./share/nls/fi_FI.ISO8859-15: user not modified: Operation not permitted
+./share/nls/fr_BE.ISO8859-1 missing (created)
+./share/nls/fr_BE.ISO8859-1: user not modified: Operation not permitted
+./share/nls/fr_BE.ISO8859-15 missing (created)
+./share/nls/fr_BE.ISO8859-15: user not modified: Operation not permitted
+./share/nls/fr_CA.ISO8859-1 missing (created)
+./share/nls/fr_CA.ISO8859-1: user not modified: Operation not permitted
+./share/nls/fr_CA.ISO8859-15 missing (created)
+./share/nls/fr_CA.ISO8859-15: user not modified: Operation not permitted
+./share/nls/fr_CH.ISO8859-1 missing (created)
+./share/nls/fr_CH.ISO8859-1: user not modified: Operation not permitted
+./share/nls/fr_CH.ISO8859-15 missing (created)
+./share/nls/fr_CH.ISO8859-15: user not modified: Operation not permitted
+./share/nls/fr_FR.ISO8859-1 missing (created)
+./share/nls/fr_FR.ISO8859-1: user not modified: Operation not permitted
+./share/nls/fr_FR.ISO8859-15 missing (created)
+./share/nls/fr_FR.ISO8859-15: user not modified: Operation not permitted
+./share/nls/hi_IN.ISCII-DEV missing (created)
+./share/nls/hi_IN.ISCII-DEV: user not modified: Operation not permitted
+./share/nls/hr_HR.ISO8859-2 missing (created)
+./share/nls/hr_HR.ISO8859-2: user not modified: Operation not permitted
+./share/nls/hu_HU.ISO8859-2 missing (created)
+./share/nls/hu_HU.ISO8859-2: user not modified: Operation not permitted
+./share/nls/is_IS.ISO8859-1 missing (created)
+./share/nls/is_IS.ISO8859-1: user not modified: Operation not permitted
+./share/nls/is_IS.ISO8859-15 missing (created)
+./share/nls/is_IS.ISO8859-15: user not modified: Operation not permitted
+./share/nls/it_CH.ISO8859-1 missing (created)
+./share/nls/it_CH.ISO8859-1: user not modified: Operation not permitted
+./share/nls/it_CH.ISO8859-15 missing (created)
+./share/nls/it_CH.ISO8859-15: user not modified: Operation not permitted
+./share/nls/it_IT.ISO8859-1 missing (created)
+./share/nls/it_IT.ISO8859-1: user not modified: Operation not permitted
+./share/nls/it_IT.ISO8859-15 missing (created)
+./share/nls/it_IT.ISO8859-15: user not modified: Operation not permitted
+./share/nls/ja_JP.SJIS missing (created)
+./share/nls/ja_JP.SJIS: user not modified: Operation not permitted
+./share/nls/ja_JP.eucJP missing (created)
+./share/nls/ja_JP.eucJP: user not modified: Operation not permitted
+./share/nls/ko_KR.eucKR missing (created)
+./share/nls/ko_KR.eucKR: user not modified: Operation not permitted
+./share/nls/la_LN.ISO8859-1 missing (created)
+./share/nls/la_LN.ISO8859-1: user not modified: Operation not permitted
+./share/nls/la_LN.ISO8859-15 missing (created)
+./share/nls/la_LN.ISO8859-15: user not modified: Operation not permitted
+./share/nls/la_LN.ISO8859-2 missing (created)
+./share/nls/la_LN.ISO8859-2: user not modified: Operation not permitted
+./share/nls/la_LN.ISO8859-4 missing (created)
+./share/nls/la_LN.ISO8859-4: user not modified: Operation not permitted
+./share/nls/la_LN.US-ASCII missing (created)
+./share/nls/la_LN.US-ASCII: user not modified: Operation not permitted
+./share/nls/lt_LT.ISO8859-4 missing (created)
+./share/nls/lt_LT.ISO8859-4: user not modified: Operation not permitted
+./share/nls/nl_BE.ISO8859-1 missing (created)
+./share/nls/nl_BE.ISO8859-1: user not modified: Operation not permitted
+./share/nls/nl_BE.ISO8859-15 missing (created)
+./share/nls/nl_BE.ISO8859-15: user not modified: Operation not permitted
+./share/nls/nl_NL.ISO8859-1 missing (created)
+./share/nls/nl_NL.ISO8859-1: user not modified: Operation not permitted
+./share/nls/nl_NL.ISO8859-15 missing (created)
+./share/nls/nl_NL.ISO8859-15: user not modified: Operation not permitted
+./share/nls/no_NO.ISO8859-1 missing (created)
+./share/nls/no_NO.ISO8859-1: user not modified: Operation not permitted
+./share/nls/no_NO.ISO8859-15 missing (created)
+./share/nls/no_NO.ISO8859-15: user not modified: Operation not permitted
+./share/nls/pl_PL.ISO8859-2 missing (created)
+./share/nls/pl_PL.ISO8859-2: user not modified: Operation not permitted
+./share/nls/pt_BR.ISO8859-1 missing (created)
+./share/nls/pt_BR.ISO8859-1: user not modified: Operation not permitted
+./share/nls/pt_PT.ISO8859-1 missing (created)
+./share/nls/pt_PT.ISO8859-1: user not modified: Operation not permitted
+./share/nls/pt_PT.ISO8859-15 missing (created)
+./share/nls/pt_PT.ISO8859-15: user not modified: Operation not permitted
+./share/nls/ro_RO.ISO8859-2 missing (created)
+./share/nls/ro_RO.ISO8859-2: user not modified: Operation not permitted
+./share/nls/ru_RU.CP866 missing (created)
+./share/nls/ru_RU.CP866: user not modified: Operation not permitted
+./share/nls/ru_RU.ISO8859-5 missing (created)
+./share/nls/ru_RU.ISO8859-5: user not modified: Operation not permitted
+./share/nls/ru_RU.KOI8-R missing (created)
+./share/nls/ru_RU.KOI8-R: user not modified: Operation not permitted
+./share/nls/sk_SK.ISO8859-2 missing (created)
+./share/nls/sk_SK.ISO8859-2: user not modified: Operation not permitted
+./share/nls/sl_SI.ISO8859-2 missing (created)
+./share/nls/sl_SI.ISO8859-2: user not modified: Operation not permitted
+./share/nls/sv_SE.ISO8859-1 missing (created)
+./share/nls/sv_SE.ISO8859-1: user not modified: Operation not permitted
+./share/nls/sv_SE.ISO8859-15 missing (created)
+./share/nls/sv_SE.ISO8859-15: user not modified: Operation not permitted
+./share/nls/tr_TR.ISO8859-9 missing (created)
+./share/nls/tr_TR.ISO8859-9: user not modified: Operation not permitted
+./share/nls/uk_UA.ISO8859-5 missing (created)
+./share/nls/uk_UA.ISO8859-5: user not modified: Operation not permitted
+./share/nls/uk_UA.KOI8-U missing (created)
+./share/nls/uk_UA.KOI8-U: user not modified: Operation not permitted
+./share/nls/zh_CN.eucCN missing (created)
+./share/nls/zh_CN.eucCN: user not modified: Operation not permitted
+./share/nls/zh_TW.Big5 missing (created)
+./share/nls/zh_TW.Big5: user not modified: Operation not permitted
+./share/nls: user not modified: Operation not permitted
+./share/skel missing (created)
+./share/skel: user not modified: Operation not permitted
+./share: user not modified: Operation not permitted
+./var missing (created)
+./var/cache missing (created)
+./var/cache: user not modified: Operation not permitted
+./var/db missing (created)
+./var/db: user not modified: Operation not permitted
+./var/log missing (created)
+./var/log: user not modified: Operation not permitted
+./var/run missing (created)
+./var/run: user not modified: Operation not permitted
+./var/spool missing (created)
+./var/spool: user not modified: Operation not permitted
+./var: user not modified: Operation not permitted
+./www missing (created)
+./www: user not modified: Operation not permitted
+Executing:  cd "/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1" && /usr/bin/make -w install DESTDIR=/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot 
+make: Entering directory `/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1'
+exec ./tools/install.sh -D -m 600 proxy-server /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/proxy-server
+grep -- ^proxy-server < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/proxy-server ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/proxy-server ; }
+exec ./tools/install.sh -D -m 600 s6-getservbyname /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-getservbyname
+grep -- ^s6-getservbyname < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-getservbyname ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-getservbyname ; }
+exec ./tools/install.sh -D -m 600 s6-ident-client /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ident-client
+grep -- ^s6-ident-client < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ident-client ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ident-client ; }
+exec ./tools/install.sh -D -m 600 s6-tcpclient /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpclient
+grep -- ^s6-tcpclient < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpclient ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpclient ; }
+exec ./tools/install.sh -D -m 600 s6-tcpserver /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver
+grep -- ^s6-tcpserver < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver ; }
+exec ./tools/install.sh -D -m 600 s6-tcpserver-socketbinder /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-socketbinder
+grep -- ^s6-tcpserver-socketbinder < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-socketbinder ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-socketbinder ; }
+exec ./tools/install.sh -D -m 600 s6-tcpserverd /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserverd
+grep -- ^s6-tcpserverd < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserverd ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserverd ; }
+exec ./tools/install.sh -D -m 600 s6-tcpserver-access /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-access
+grep -- ^s6-tcpserver-access < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-access ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-access ; }
+exec ./tools/install.sh -D -m 600 s6-clockadd /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockadd
+grep -- ^s6-clockadd < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockadd ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockadd ; }
+exec ./tools/install.sh -D -m 600 s6-clockview /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockview
+grep -- ^s6-clockview < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockview ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockview ; }
+exec ./tools/install.sh -D -m 600 s6-sntpclock /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-sntpclock
+grep -- ^s6-sntpclock < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-sntpclock ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-sntpclock ; }
+exec ./tools/install.sh -D -m 600 s6-taiclock /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclock
+grep -- ^s6-taiclock < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclock ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclock ; }
+exec ./tools/install.sh -D -m 600 s6-taiclockd /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclockd
+grep -- ^s6-taiclockd < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclockd ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclockd ; }
+exec ./tools/install.sh -D -m 600 s6-tlsclient /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsclient
+grep -- ^s6-tlsclient < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsclient ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsclient ; }
+exec ./tools/install.sh -D -m 600 s6-tlsc /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc
+grep -- ^s6-tlsc < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc ; }
+exec ./tools/install.sh -D -m 600 s6-tlsc-io /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc-io
+grep -- ^s6-tlsc-io < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc-io ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc-io ; }
+exec ./tools/install.sh -D -m 600 s6-tlsserver /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsserver
+grep -- ^s6-tlsserver < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsserver ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsserver ; }
+exec ./tools/install.sh -D -m 600 s6-tlsd /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd
+grep -- ^s6-tlsd < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd ; }
+exec ./tools/install.sh -D -m 600 s6-tlsd-io /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd-io
+grep -- ^s6-tlsd-io < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd-io ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd-io ; }
+exec ./tools/install.sh -D -m 600 s6-ucspitlsc /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsc
+grep -- ^s6-ucspitlsc < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsc ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsc ; }
+exec ./tools/install.sh -D -m 600 s6-ucspitlsd /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsd
+grep -- ^s6-ucspitlsd < package/modes | { read name mode owner && if [ x$owner != x ] ; then chown -- $owner /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsd ; fi && chmod $mode /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsd ; }
+exec ./tools/install.sh -D -m 644 libs6net.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libs6net.a
+exec ./tools/install.sh -D -m 644 libstls.a.xyzzy /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libstls.a
+exec ./tools/install.sh -D -m 644 src/include/s6-networking/config.h /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/config.h
+exec ./tools/install.sh -D -m 644 src/include/s6-networking/ident.h /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/ident.h
+exec ./tools/install.sh -D -m 644 src/include/s6-networking/s6net.h /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/s6net.h
+exec ./tools/install.sh -D -m 644 src/include/s6-networking/sbearssl.h /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/sbearssl.h
+exec ./tools/install.sh -D -m 644 src/include/s6-networking/stls.h /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/stls.h
+exec ./tools/install.sh -D -m 644 libs6net.pc /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig/libs6net.pc
+exec ./tools/install.sh -D -m 644 libstls.pc /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig/libstls.pc
+make: Leaving directory `/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1'
+xinstall: mkdir /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking
+xinstall: chdir(/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/s6-networking-2.8.0.1)
+xinstall: mkdir /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libs6net
+xinstall: mkdir /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libstls
+--->  Installing s6-networking @2.8.0.1_0+openssl
+Executing:  cd "/Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/build/s6-networking-6b66420d/work/destroot" && /usr/bin/tar -cvf - . | /usr/bin/tar -C /Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/var/macports/software/s6-networking/s6-networking-2.8.0.1_0+openssl.darwin_27.arm64 -xvpf - 
+a .
+a ./+STATE
+a ./+PORTFILE
+x ./
+x ./+STATEa ./+CONTENTS
+
+x ./+PORTFILEa ./+DESC
+
+x ./+CONTENTSa ./+COMMENT
+
+x ./+DESCa ./Users
+
+x ./+COMMENTa ./Users/bjorn
+a ./Users/bjorn/Library
+a ./Users/bjorn/Library/Caches
+
+x ./Users/
+x ./Users/bjorn/a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test
+
+x ./Users/bjorn/Library/
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include
+x ./Users/bjorn/Library/Caches/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-clockadd.html
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsd.html
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-clockadd.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libstls
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsd.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsd-io.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libstls/
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsd-io.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/INSTALL
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/INSTALLa ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/index.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/index.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserver-access.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserver-access.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-ucspitlsd.html
+
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsserver.htmlx ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-ucspitlsd.html
+
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/AUTHORSx ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsserver.html
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserverd.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/AUTHORSa ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-ident-client.html
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserverd.html
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-ucspitlsc.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-ident-client.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpclient.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-ucspitlsc.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsc.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpclient.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/proxy-server.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsc.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/tls-overview.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/proxy-server.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-getservbyname.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/tls-overview.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-clockview.html
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/README
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-getservbyname.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsc-io.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-clockview.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserver.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/READMEa ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/upgrade.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsc-io.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libs6net
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserver.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/COPYING
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/upgrade.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/NEWS
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libs6net/
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-taiclock.htmlx ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/COPYING
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/NEWSa ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-taiclockd.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-taiclock.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsclient.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-taiclockd.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-sntpclock.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tlsclient.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserver-socketbinder.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-sntpclock.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libs6net/index.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/s6-tcpserver-socketbinder.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libs6net/ident.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libs6net/index.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libstls/index.html
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libs6net/ident.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/share/doc/s6-networking/libstls/index.htmla ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libs6net.a
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig/a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libstls.a
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libs6net.a
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/libstls.aa ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig/libs6net.pc
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig/libstls.pc
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig/libs6net.pca ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/config.h
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/lib/pkgconfig/libstls.pca ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/sbearssl.h
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/ident.h
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/config.h
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/stls.h
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/sbearssl.h
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/s6net.h
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/ident.h
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-socketbinder
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/stls.ha ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsd
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/include/s6-networking/s6net.h
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-socketbinder
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsda ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsc
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ucspitlsca ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-sntpclock
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-sntpclocka ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-getservbyname
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-getservbynamea ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclock
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclocka ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsserver
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsservera ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclockd
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-taiclockda ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserverd
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserverda ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpclient
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpclient
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsda ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsca ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd-io
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsd-ioa ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/proxy-server
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/proxy-servera ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockview
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockviewa ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc-io
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsc-io
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-access
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver-access
+a ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsclient
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tlsclienta ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ident-client
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-ident-clienta ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpserver
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-tcpservera ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockadd
+
+x ./Users/bjorn/Library/Caches/com.bjornpagen.macports-test/prefix/bin/s6-clockadd
+--->  Activating s6-networking @2.8.0.1_0+openssl

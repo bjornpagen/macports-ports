@@ -1,0 +1,5 @@
+# 27.0.1 26A434 arm64, 27.0 SDK
+ok 1. sendto(connected peer): -1, Socket is already connected
+ok 2. write(): 1, sent
+ok 3. client read "y" (stranger sent x, server sent y)
+# exit 0
